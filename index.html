@@ -54,6 +54,29 @@
     h2 {
       font-size: 2rem;
     }
+
+    /* Vidéo responsive en grille */
+    .video-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .video-container {
+      flex: 1 1 300px;
+      max-width: 400px;
+      aspect-ratio: 16 / 9;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     form input, form textarea, form button {
       width: 100%;
       margin-bottom: 1rem;
@@ -70,10 +93,12 @@
     form button:hover {
       background-color: #2980b9;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -109,45 +134,27 @@
       <p>Ce site est dédié à l’éducation, à l’apprentissage interactif et au partage de savoirs.</p>
     </section>
 
-   <section id="video">
-
-
-
-     
-  <h2>Vidéo éducative</h2>
-
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/FWf7NXLjx9c?start=17" 
-            title="Vidéo éducative 1"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/xOUhRk1Cr5o" 
-            title="Vidéo éducative 2"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-    </iframe>
-  </div>
-    
-
-      <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/SRhTSzcxcCs&t=17s" 
-            title="Vidéo éducative 2"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-    </iframe>
-  </div>
-  
-
-</section>
-
-
+    <section id="video">
+      <h2>Vidéos éducatives</h2>
+      <div class="video-gallery">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/FWf7NXLjx9c?start=17" title="Vidéo 1" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/xOUhRk1Cr5o" title="Vidéo 2" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/SRhTSzcxcCs?start=17" title="Vidéo 3" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/kqtD5dpn9C8" title="Python débutant" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/rfscVS0vtbw" title="Cours complet Python" allowfullscreen></iframe>
+        </div>
+        <!-- Ajoute ici autant de vidéos que tu veux -->
+      </div>
+    </section>
 
     <section id="graphique">
       <h2>Graphique interactif</h2>
@@ -242,6 +249,5 @@
       document.getElementById("quizResult").textContent = `Tu as ${score}/${answers.length} bonnes réponses.`;
     }
   </script>
-
 </body>
 </html>
